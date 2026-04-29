@@ -1,0 +1,25 @@
+{
+  "name": "fund-lineage-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fund Lineage Tracker Blnk App monorepo",
+  "scripts": {
+    "dev": "npm run dev --workspace backend & npm run dev --workspace frontend",
+    "build": "npm run build --workspace backend && npm run build --workspace frontend",
+    "typecheck": "npm run typecheck --workspace backend && npm run typecheck --workspace frontend"
+  },
+  "keywords": [
+    "blnk",
+    "lineage",
+    "monorepo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "workspaces": [
+    "apps/backend",
+    "apps/frontend"
+  ],
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
