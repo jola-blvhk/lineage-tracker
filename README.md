@@ -1,21 +1,24 @@
 # Fund Lineage Tracker
 
-Blnk App monorepo with:
+Blnk App split into:
 
-- `apps/backend` - Express + Prisma backend for install hooks, portal URL generation, and lineage proxy APIs
-- `apps/frontend` - React iframe app rendering lineage DAG with React Flow
+- `backend` - Express + Prisma backend for install hooks, portal URL generation, and lineage proxy APIs
+- repository root - Next.js frontend rendering lineage DAG with React Flow
 
 ## Quick Start
 
 1. Copy environment files:
-   - `apps/backend/.env.example` -> `apps/backend/.env`
-   - `apps/frontend/.env.example` -> `apps/frontend/.env`
+   - `backend/.env.example` -> `backend/.env`
+   - `.env.example` -> `.env`
 2. Install dependencies:
-   - `npm install`
-3. Run database migration and Prisma client generation:
-   - `npm run prisma:migrate --workspace backend`
-   - `npm run prisma:generate --workspace backend`
-4. Start both services:
+   - Frontend (root): `npm install`
+   - Backend: `cd backend && npm install`
+3. Start frontend:
+   - `npm run dev`
+4. Run backend migrations and start backend:
+   - `cd backend`
+   - `npm run prisma:migrate`
+   - `npm run prisma:generate`
    - `npm run dev`
 
 ## Endpoints
@@ -25,4 +28,3 @@ Blnk App monorepo with:
 - `GET /api/balances` - lineage-enabled balances
 - `GET /api/lineage/balance/:balanceId` - balance lineage proxy
 - `GET /api/lineage/transaction/:transactionId` - transaction lineage proxy
-# lineage-tracker
